@@ -1,46 +1,22 @@
 <template >
-    <div :class="[task.reminder ? 'reminder' : '', 'task']"
-    :key="task.id" 
-    v-for="task in tasks">
-        <h3>
-            {{task.text}}
-            <i @click="onDelete(task.id)" class="fas fa-times"></i>
-        </h3>
-        
-        <p>{{ task.day}} </p>
+    <div :key="task.id" v-for="task in tasks">
+        <Task :task="task" />
     </div>
 </template>
 
 <script>
+import Task from'./Task'
+
 export default {
     name: 'Tasks',
     props: {
-        tasks: Object
+        tasks: Array
     },
-    methods: {
-      onDelete(id){
-        console.log(id)
-      }
+    components: {
+      Task,
     }
+    
+    
 }
 </script>
 
-<style scoped>
-.fas {
-  color: red;
-}
-.task {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-.task.reminder {
-  border-left: 5px solid green;
-}
-.task h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-</style>
