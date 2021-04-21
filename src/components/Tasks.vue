@@ -4,7 +4,7 @@
     v-for="task in tasks">
         <h3>
             {{task.text}}
-            <i class="fas fa-times"></i>
+            <i @click="onDelete(task.id)" class="fas fa-times"></i>
         </h3>
         
         <p>{{ task.day}} </p>
@@ -16,13 +16,18 @@ export default {
     name: 'Tasks',
     props: {
         tasks: Object
+    },
+    methods: {
+      onDelete(id){
+        console.log(id)
+      }
     }
 }
 </script>
 
 <style scoped>
 .fas {
-  color: rgba(255, 0, 0, 0.795);
+  color: red;
 }
 .task {
   background: #f4f4f4;
