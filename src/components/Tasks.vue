@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .fas {
-  color: red;
+  color: rgba(255, 0, 0, 0.795);
 }
 .task {
   background: #f4f4f4;
