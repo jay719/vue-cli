@@ -5,7 +5,7 @@
             <i @click="onDelete(task.id)" class="fas fa-times"></i>
         </h3>
         
-        <p>{{ task.day}} </p>
+        <p>{{task.day}} </p>
     </div>
 </template>
 
