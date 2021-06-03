@@ -12,7 +12,7 @@ export default {
     },
     methods: {
         onClick() {
-            console.log('clicked item')
+            console.log('clicked')
         }
     }
 }
